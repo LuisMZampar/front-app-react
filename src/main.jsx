@@ -5,19 +5,23 @@ import App from './App.jsx'
 //ROTAS
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './routes/Home.jsx'
+import Produtos from './routes/Produto.jsx'
 
 const routes = createBrowserRouter([
   { path: "/", element: <App/>,
   children:[
-    {path: "/", element: <Home/>}
+    {path: "/", element: <Home/>},
+    {path: "/produtos", element: <Produtos/>},
   ]
   }
 ]);
 
 //ROTAS
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routes}/>
   </React.StrictMode>,
 )
